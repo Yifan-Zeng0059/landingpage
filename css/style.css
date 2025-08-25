@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Metamorphous&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
+/* -------SITE FONTS------- */
+/* font-family: "Metamorphous", serif; - heading
+font-family: "Quicksand", sans-serif; - subheading
+font-family: "Montserrat", sans-serif; - body text/
+
+/* -------SITE COLORS------- */
+/* #454361 - Base color
+#412715 - Secondary color
+#D7D8FE - accent color
+#F4EDE8 - neutral */
+
+/* declare root */
+:root {
+    --primary: #49206d;
+    --secondary: #412715;
+    --accent: #D7D8FE;
+    --neutral: #f9f4ed;
+
+    --heading: "Metamorphous", serif;
+    --subheading: "Quicksand", sans-serif;
+    --text: "Montserrat", sans-serif;
+}
+
+/* general styling */
+body {
+    background-color: var(--accent);
+}
+
+/* .wrapper {
+    background-color: var(--neutral);
+    width: 100%;
+    max-width: 90em;
+    margin: auto;
+} */
+/* 
+h2 {
+    font-family: var(--heading);
+    font-size: 20px;
+    padding: 0.5em;
+    margin-top: 2em;
+} */
+
+/* landing page title */
+#title {
+    /* size adjustment */
+    width: 100%;
+    position: absolute;
+    top:5%;
+    padding: 1.5em;
+    max-width: calc(100% - 3em);
+    /* text styling */
+    text-align: center;
+    font-size: 2rem;
+    font-family: var(--heading);
+    color: var(--primary);
+    /* transition */
+    opacity: 0;
+    transform: translateY(0);
+}
+#title a {
+    text-decoration: none;
+    color: var(--primary);
+    }
+
+/* show title after logo animation */
+#title.showTitle {
+    opacity: 1;
+    transform: translateY(1.5rem);
+    transition: all 1s linear 1.5s;
+}
+
+/* nav container at center of viewport beneath logo. transition start*/
+.navbar {
+    list-style: none;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: absolute;
+    top: 30%;
+    opacity: 0;
+}
+
+/* transition used to show navbar */
+.navbar.showMenu {
+    opacity: 1;
+    transition: all 1.8s ease-in-out 2s;
+}
+
+
+/* nav menu styling */
+.navbar li a {
+    /* size adjustment */
+    display: inline-block;
+    width: 30%;
+    padding: 2.5rem;
+    max-width: calc(100% - 4rem);
+    /* text styling */
+    text-decoration: none;
+    text-align: center;
+    font-size: 1rem;
+    font-family: var(--subheading);
+    color: var(--secondary);
+    /* textbox styling */
+    border-style: solid;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -3px -3px 3px rgba(255, 255, 255, 0);
+    border-color: var(--primary);
+    border-radius: 1rem;
+    background-color: var(--neutral);
+    margin: 1rem;
+}
+
+.navbar li a:hover {
+    color: var(--neutral);
+    background-color: var(--secondary);
+}
+
+/* image fixed at the bottom right corner of viewport */
+#bio-3d {
+    display: block;
+    width: 30%;
+    height: auto;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 1em;
+}
+
+/* styling logo svg */
+.logo-anm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    perspective: 20em;
+}
+
+/* svg container takes full viewport */
+.logo-anm .full-view {
+    width: 100vw;
+    height: 100vh;
+}
+
+/* assign animation to layers and adjust transform origin */
+.logo-anm #in.open {
+    animation: openDoor 2.5s ease-in-out both;
+    transform-origin: 60% 60%;
+}
+
+.logo-anm #out.zoom {
+    animation: doorZoom 4s ease-in-out both;
+    transform-origin: 50% 50%;
+}
+
+/* animation */
+@keyframes openDoor {
+    /* assign to inLayer*/
+    from {
+        transform: translate(0, 0) rotateY(0deg) scale(1);
+    }
+
+    to {
+        transform: translate(50rem, 60rem) rotateY(-90deg) scale(7);
+    }
+}
+
+@keyframes doorZoom {
+    /* assign to outLayer*/
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(18);
+    }
+}
+
+/* logo disappear after animation so that nav can be clicked*/
+.hidden {
+    display: none;
+}
+
+
+/* adjustment for desktop */
+@media only screen and (min-width: 60em) {
+    #title {
+        top: 5%;
+        font-size: 5rem;
+    }
+
+    .navbar li a {
+        width: 20%;
+    }
+    .navbar li a {
+        width: 20%;
+        font-size: 1.2rem;
+        
+    }
+}
