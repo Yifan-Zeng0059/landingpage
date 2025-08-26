@@ -27,19 +27,24 @@ body {
     background-color: var(--accent);
 }
 
-/* .wrapper {
+.wrapper {
     background-color: var(--neutral);
     width: 100%;
     max-width: 90em;
     margin: auto;
-} */
-/* 
+}
+
 h2 {
     font-family: var(--heading);
     font-size: 20px;
     padding: 0.5em;
     margin-top: 2em;
-} */
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+}
 
 /* landing page title */
 #title {
@@ -186,10 +191,10 @@ h2 {
 
 /* adjustment for desktop */
 @media only screen and (min-width: 60em) {
-    #title {
+    /* #title {
         top: 5%;
         font-size: 5rem;
-    }
+    } */
 
     .navbar li a {
         width: 20%;
@@ -199,5 +204,4 @@ h2 {
         font-size: 1.2rem;
         
     }
-
 }
