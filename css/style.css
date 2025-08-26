@@ -51,7 +51,7 @@ h2 {
     max-width: calc(100% - 3em);
     /* text styling */
     text-align: center;
-    font-size: 2rem;
+    font-size: 3rem;
     font-family: var(--heading);
     color: var(--primary);
     /* transition */
@@ -199,4 +199,5 @@ h2 {
         font-size: 1.2rem;
         
     }
+
 }
