@@ -125,7 +125,7 @@ header {
 /* image fixed at the bottom right corner of viewport */
 #bio-3d {
     display: block;
-    max-width: 400px;
+    max-width: 300px;
     width: 30%;
     height: auto;
     position: fixed;
@@ -206,4 +206,5 @@ header {
         
     }
 }
+
 
